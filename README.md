@@ -24,11 +24,11 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 In `src/components/` you can place Astro/React/Vue/Svelte/Preact components.
 
-The `src/icons/` directory contains the src icons
+The `src/icons/` directory contains svg icons.
 
-The `src/scripts/` directory contains the scripts
+The `src/scripts/` directory contains the scripts.
 
-The `src/styles/` directory contains the styles
+The `src/styles/` directory contains the styles.
 
 Any static assets, like images, can be placed in the `public/` directory.
 
