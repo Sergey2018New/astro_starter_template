@@ -6,7 +6,7 @@ import replace from 'gulp-replace';
 import beautify from 'gulp-beautify';
 
 const srcIcons = `./src/icons/**/*.svg`;
-const publicIcons = `./public/assets/`;
+const publicIcons = `./public/img/`;
 
 const spriteSvg = () => {
 	deleteAsync(publicIcons + 'icons.svg');
