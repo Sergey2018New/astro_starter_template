@@ -13,6 +13,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── pages/
 │   ├── scripts/
 │   └── styles/
+├── data/
 ├── astro.config.mjs
 ├── gulpfile.js
 ├── README.md
@@ -24,11 +25,13 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 In `src/components/` you can place Astro/React/Vue/Svelte/Preact components.
 
-The `src/icons/` directory contains the src icons
+The `src/icons/` directory contains the svg icons
 
 The `src/scripts/` directory contains the scripts
 
 The `src/styles/` directory contains the styles
+
+The `data/` directory is used to store data, such as json files
 
 Any static assets, like images, can be placed in the `public/` directory.
 
@@ -44,6 +47,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
+| `gulp svg`             | Generate file with svg icons                     |
 
 ## Documentation
 

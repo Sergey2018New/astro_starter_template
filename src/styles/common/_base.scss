@@ -89,20 +89,10 @@ table {
 	margin: 0 auto;
 	padding: 0 $gutters;
 	width: 100%;
-	max-width: $container + $gutters * 2;
+	max-width: calc($container + $gutters * 2);
 
 	&_fluid {
 		max-width: none;
-	}
-
-	@include media(pc) {
-		padding-left: $gutters-tablet;
-		padding-right: $gutters-tablet;
-	}
-
-	@include media(mob) {
-		padding-left: $gutters-mobile;
-		padding-right: $gutters-mobile;
 	}
 }
 
@@ -114,25 +104,5 @@ table {
 	&.is-active {
 		visibility: visible;
 		opacity: 1;
-	}
-}
-
-.site-pages {
-	padding: 5rem 0;
-
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-
-		a {
-			text-decoration: none;
-
-			&:hover {
-				color: blue;
-			}
-		}
 	}
 }

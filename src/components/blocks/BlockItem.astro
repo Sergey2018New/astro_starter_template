@@ -1,0 +1,33 @@
+---
+interface Props {
+    title?: string;
+    image?: string;
+    image2x?: string;
+    class?: string;
+    [x: string]: any;
+}
+
+const { 
+	title, 
+	image, 
+	image2x,
+	class: className,
+	...rest
+} = Astro.props;
+
+---
+
+<div 
+	class:list={[
+		'block-item', 
+		className
+	]}
+	{...rest}
+>
+	<a href="" class="block-item__link">
+		<div class="block-item__title" set:html={title}></div>
+		<div class="block-item__image-box">
+			<img class="block-item__image" src={image} srcset={image2x} width="400" height="300" alt="" loading="lazy" />
+		</div>
+	</a>
+</div>

@@ -1455,10 +1455,10 @@
 		"scope": "html,php,astro,twig", 
 		"prefix": "uislider",
 		"body": [
-			"<div class=\"rangeSlider\" data-slider data-slider-min=\"1\" data-slider-max=\"100\" data-slider-step=\"1\">",
-				"\t<input type=\"number\" class=\"rangeSlider__input formInput\" data-slider-input min=\"1\" max=\"100\" value=\"100\">",
-				"\t<div class=\"rangeSlider__slider ul-slider\" data-slider-ui></div>",
-				"\t<div class=\"rangeSlider__value\" data-slider-value></div>",
+			"<div class=\"slider\" data-slider data-slider-min=\"1\" data-slider-max=\"100\" data-slider-step=\"1\">",
+				"\t<input type=\"number\" class=\"slider__input ui-input\" data-slider-input min=\"1\" max=\"100\" value=\"100\">",
+				"\t<div class=\"slider__slider ul-slider\" data-slider-ui></div>",
+				"\t<div class=\"slider__value\" data-slider-value></div>",
 			"</div>"
 		],    
 		"description": "ui slider"
@@ -1466,24 +1466,24 @@
 	
 	"Range slider": {
 		"scope": "html,php,astro,twig", 
-		"prefix": "rangeSlider",
+		"prefix": "uisliderRange",
 		"body": [
-			"<div class=\"rangeSlider\" data-slider data-slider-min=\"1\" data-slider-max=\"100\" data-slider-step=\"1\" data-slider-range>",
-				"\t<div class=\"rangeSlider__row\">",
-					"\t\t<div class=\"rangeSlider__column\">",
-						"\t\t\t<div class=\"rangeSlider__label\">От</div>",
-						"\t\t\t<div class=\"rangeSlider__field\">",
-							"\t\t\t\t<input type=\"number\" class=\"rangeSlider__input formInput\" data-slider-input-min min=\"1\" max=\"100\" value=\"1\">",
+			"<div class=\"slider\" data-slider data-slider-min=\"1\" data-slider-max=\"100\" data-slider-step=\"1\" data-slider-range>",
+				"\t<div class=\"slider__row\">",
+					"\t\t<div class=\"slider__column\">",
+						"\t\t\t<div class=\"slider__label\">От</div>",
+						"\t\t\t<div class=\"slider__field\">",
+							"\t\t\t\t<input type=\"number\" class=\"slider__input ui-input\" data-slider-input-min min=\"1\" max=\"100\" value=\"1\">",
 						"\t\t\t</div>",
 					"\t\t</div>",
-					"\t\t<div class=\"rangeSlider__column\">",
-						"\t\t\t<div class=\"rangeSlider__label\">До</div>",
-						"\t\t\t<div class=\"rangeSlider__field\">",
-							"\t\t\t\t<input type=\"number\" class=\"rangeSlider__input formInput\" data-slider-input-max min=\"1\" max=\"100\" value=\"100\">",
+					"\t\t<div class=\"slider__column\">",
+						"\t\t\t<div class=\"slider__label\">До</div>",
+						"\t\t\t<div class=\"slider__field\">",
+							"\t\t\t\t<input type=\"number\" class=\"slider__input ui-input\" data-slider-input-max min=\"1\" max=\"100\" value=\"100\">",
 						"\t\t\t</div>",
 					"\t\t</div>",
 				"\t</div>",
-				"\t<div class=\"rangeSlider__slider ul-slider\" data-slider-ui></div>",
+				"\t<div class=\"slider__slider ul-slider\" data-slider-ui></div>",
 			"</div>"
 		],    
 		"description": "Range slider"
@@ -1491,9 +1491,9 @@
 
 	"Range slider scss": {
 		"scope": "less,scss", 
-		"prefix": "rangeSlider",
+		"prefix": "sliderRange",
 		"body": [
-			".rangeSlider {",
+			".slider {",
 				"\t&__row {",
 					"\t\tdisplay: grid;",
 					"\t\tgrid-template-columns: repeat(2, minmax(0, 1fr));",

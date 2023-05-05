@@ -1,71 +1,28 @@
-/* Подключение библиотек *************************/
+/* Common libraries *************************/
 import './vendor.js';
 import LazyLoad from "vanilla-lazyload";
 
-/* Подключение основных функций ******************/
-// import {tabs} from './components/functions.js';
-/*
-    tabs() - вкладки
-    accordions() - аккордеоны / спойлеры
-    dropdowns() - простое выпадающее меню
-    sticky() - прилипающий блок при скролле
-*/
+/* Common scripts ********************/
+import './scripts/setHeight.js';
 
-/* Подключение слайдеров *************************/
-// import './components/sliders.js';
+/* Main components ******************/
+// import swiper from './components/swiper.js';
 
-/* Подключение модального окна ********************/
-// import {modal} from './components/modal.js'; 
-// modal.init();
+/* Header scripts ********************/
+// import headerMenu from './header/headerMenu.js';
+// import headerFixed from './header/headerFixed.js';
 
-/* Подключение выпадающего списка ****************/
-// import './components/select.js';
+// headerFixed();
+// headerMenu(1199);
 
-/* Подключение всплывающей подсказки *************/
-/* 
-    tooltip(selector) - инициализация всплывающей подсказки, selector - селектор внешнего контейнера
-*/
-// import {tooltip} from './components/tooltip.js';
-// tooltip();
+/* Additional scripts ***********/
+// import './scripts/script.js';
 
-/* Подключение ползунка **************************/
-// import './components/nouislider.js';
-
-/* Подключение Datepicker ************************/
-// import './components/datepicker.js';
-
-/* Подключение функций для работы с формой *******/
-// import {formFields} from './components/form.js';
-/*
-    formFields() - поля формы
-    formCheckboxes() - чекбоксы
-    formRadioButtons() - радио кнопки
-    formRating() - звёздный рейтинг
-    formCounter() - счётчик количества
-    formAttach() - прикрепление файла
-*/
-
-/* Подключение навигации при скролле *************/
-// import navigation from './components/navigation.js';
-// navigation();
-
-/* Подключение анимации при скролле **************/
+/* Animation on scroll **************/
 // import './components/animation.js';
 
-/* Подключение шапки *****************************/
-// import {headerMenu, fixHeader} from './components/header.js';
-/*
-    headerMenu() - меню
-    fixHeader() - фиксирование шапки
-*/
-
-/* Подключение дополнительных скриптов ***********/
-import './scripts/scripts.js';
-
-/* Подключение валидации *************************/
+/* Validation *************************/
 import './validation.js';
 
 // Lazy Load
-var lazyLoad = new LazyLoad({
-    // Your custom settings go here
-});
+let lazyLoad = new LazyLoad({});

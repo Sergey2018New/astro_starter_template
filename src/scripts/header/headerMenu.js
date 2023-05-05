@@ -1,38 +1,13 @@
-import helpers from '../helpers.js';
-import {addClassOnScroll} from './functions.js';
-
 /*
-     --------------- 
-	|   FIX HEADER   |
-	  ---------------
+     ----------------
+	|  HEADER  MENU  |
+	 ----------------
 */
 
-function fixHeader() {
-    addClassOnScroll(document.querySelector('.header'), 'is-fixed', true, false);
-}
-
-/*
-	  --------------- 
-	|   HEADER MENU   |
-	  ---------------
-
-	* Базовые селекторы:
-		* .js-menu - обёртка меню
-		* .js-menu-burger - кнопка "бургер" открытия/закрытия меню
-        * .js-menu-body - основной блок меню
-		* .js-menu-overlay - фоновая подложка
-		* .js-menu-close - кнопка закрытия меню
-
-    * Селекторы многоуровнего меню
-		* .js-menu-dropdown - применяется для li элементов, у которых есть вложенное меню
-        * .js-menu-link - селектор для открытия вложенного меню
-        * .js-menu-submenu - вложенное меню
-*/
-
-function headerMenu(delay = 300, maxWidth = 991) {
+export default function headerMenu(maxWidth = 991, delay = 300) {
     /* 
-		@param  {number} delay - время открытия меню (также необходимо изменить в CSS)
-		@param  {number} maxWidth - максимальная ширина браузера, при котором срабатывает вложенное меню при клике
+		@param  {number} delay - menu opening time (also needs to be changed in CSS)
+		@param  {number} maxWidth - the maximum width of the browser at which the nested menu fires when clicked
 	*/
 
     const menu = document.querySelector('.js-menu');
@@ -138,5 +113,3 @@ function headerMenu(delay = 300, maxWidth = 991) {
         }
     }
 }
-
-export {headerMenu, fixHeader};

@@ -1,38 +1,39 @@
-import helpers from '../helpers.js';
-// import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+// import Swiper, { Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
 
 /*
 	Swiper
 	https://swiperjs.com/swiper-api
 */
 
-if (document.querySelector('.js-slider-swiper')) {
-	const slider = new Swiper(document.querySelector('.js-slider-swiper'), {
-		modules: [Navigation, Pagination, Scrollbar],
-		slidesPerView: 2,
-		spaceBetween: 15,
-		loop: false,
-		navigation: {
-		  prevEl: '.swiper-button-prev',
-		  nextEl: '.swiper-button-next'
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true
-		},
-		scrollbar: {
-			el: '.swiper-scrollbar',
-			draggable: true,
-			snapOnRelease: false
-		},
-		breakpoints: {
-			576: {
-			  slidesPerView: 2,
-			  spaceBetween: 20,
-			}
+new Swiper('.js-slider-swiper', {
+	modules: [Keyboard, Navigation, Pagination, Scrollbar],
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	},
+	slidesPerView: 2,
+	spaceBetween: 15,
+	loop: false,
+	navigation: {
+	  prevEl: '.js-slider-prev',
+	  nextEl: '.js-slider-next'
+	},
+	pagination: {
+		el: '.js-slider-pagination',
+		clickable: true
+	},
+	scrollbar: {
+		el: '.js-slider-scrollbar',
+		draggable: true,
+		snapOnRelease: false
+	},
+	breakpoints: {
+		576: {
+		  slidesPerView: 2,
+		  spaceBetween: 20,
 		}
-	});
-}
+	}
+});
 
 // Init slider with max width
 function initSlider(sliderSelector, options, maxWidth = 991) {

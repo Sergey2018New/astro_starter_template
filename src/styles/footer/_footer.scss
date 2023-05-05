@@ -11,11 +11,5 @@
         align-items: center;
         justify-content: space-between;
         gap: 2rem 3rem;
-
-        @include media(mob-m) {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
     }
 }

@@ -18,25 +18,9 @@
 	width: 100%;
 	height: $header;
 
-	@include media(tab) {
-		height: $header-tablet;
-	}
-
-	@include media(mob) {
-		height: $header-mobile;
-	}
-
 	&__inner {
 		height: $header;
 		background: $black;
-
-		@include media(tab) {
-			height: $header-tablet;
-		}
-
-		@include media(mob) {
-			height: $header-mobile;
-		}
 	}
 
 	&__container {
@@ -48,7 +32,14 @@
 	}
 
 	&__right {
-		margin-left: auto;
+		justify-self: flex-end;
+	}
+
+	&.is-fixed-start {
+		.header__inner {
+			height: 8rem;
+			transform: translateY(-100%);
+		}
 	}
 
 	&.is-fixed {
@@ -58,6 +49,13 @@
 			left: 0;
 			top: 0;
 			width: 100%;
+			transition: $duration transform;
+		}
+	}
+
+	&.is-fixed-visible {
+		.header__inner {
+			transform: translateY(0);
 		}
 	}
 }

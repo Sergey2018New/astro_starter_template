@@ -1,47 +1,49 @@
-// Variables
-@import "vars";
-
 // Mixins
 @import "mixins";
 
-// External plugins
-@import "vendor";
+// Functions
+@import "functions";
+
+// Variables
+@import "vars"; 
 
 // Fonts
-@import "./fonts";
+@import "fonts";
+
+// Vendor
+@import "vendor";
 
 // Base
-@import "./base";
+@import "./common/base";
+@import "./common/utilites";
 
-// Icons
-@import "./modules/icons";
+// Plugins
+@import "./plugins/plugins";
 
-// Buttons
-@import "./modules/buttons";
-
-// Form
-@import "./modules/form";
-
-// Plugin styling
-@import "./modules/plugins";
-
-// Header
-@import "./header";
-
-// Footer
-@import "./footer";
+// Modules
+@import "./modules/icon";
+@import "./modules/button";
+@import "./modules/input";
+@import "./modules/modal";
 
 // Common elements
-@import "./elements";
+@import "./common/elements";
+@import "./common/form";
+
+// Header
+@import "./header/header";
+
+// Footer
+@import "./footer/footer";
 
 // Site blocks
-@import "./blocks/block";
+@import "./blocks/blockItem";
 
 // Site sections
 @import "./sections/homeSection";
 
-// Modal
-@import "./modules/modal";
+// Pages
+// @import "./pages/page";
 
-// Certain modals
+// Modals
 // @import "./modals/modal";
