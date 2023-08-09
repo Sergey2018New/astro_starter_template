@@ -1,28 +1,41 @@
-/* Common libraries *************************/
+/* Import vendor ************************** */
 import './vendor.js';
 import LazyLoad from "vanilla-lazyload";
 
-/* Common scripts ********************/
+/* Import common scripts ****************** */
 import './scripts/setHeight.js';
 
-/* Main components ******************/
+/* Import main components ***************** */
+// import { modal } from './components/modal.js';
+
+/* Import additional components *********** */
 // import swiper from './components/swiper.js';
 
-/* Header scripts ********************/
-// import headerMenu from './header/headerMenu.js';
-// import headerFixed from './header/headerFixed.js';
+/* Import header scripts ****************** */
+import headerFixing from './header/headerFixing.js';
+import headerMenu from './header/headerMenu.js';
 
-// headerFixed();
-// headerMenu(1199);
+/* Import additional scripts ************** */
+// import script from './scripts/script.js';
 
-/* Additional scripts ***********/
-// import './scripts/script.js';
+/* Import validation ********************** */
+// import validation from './validation.js';
 
-/* Animation on scroll **************/
-// import './components/animation.js';
+/* Initialization main components ************* */
+// modal.init();
 
-/* Validation *************************/
-import './validation.js';
+/* Initialization additional components ******* */
+// swiper();
+
+/* Initialization header scripts ************** */
+headerFixing();
+headerMenu(991);
+
+/* Initialization additional scripts ********** */
+// script();
+
+/* Validation ************************ */
+// validation();
 
 // Lazy Load
-let lazyLoad = new LazyLoad({});
+new LazyLoad({});

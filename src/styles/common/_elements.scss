@@ -1,7 +1,7 @@
 /* ------- Site elements ------- */
-.sectionTitle {
-    padding-bottom: 5rem;
-    font-size: 3rem;
+.section-title {
+    margin-top: 0;
+    font-size: var(--title-size);
     font-weight: 400;
 
     h1,
@@ -16,7 +16,7 @@
     }
 }
 
-.tableWrapper {
+.table-wrapper {
 	overflow: auto;
 
 	table {

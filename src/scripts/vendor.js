@@ -1,2 +1,4 @@
 // DynamicAdapt
-//import "./vendor/dynamicAdapt.js";
+// import { useDynamicAdapt } from './vendor/dynamicAdapt.js';
+
+// useDynamicAdapt();

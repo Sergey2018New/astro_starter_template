@@ -39,9 +39,23 @@ a {
 	transition: color $duration;
 }
 
+button {
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: $base-color;
+	background-color: transparent;
+	cursor: pointer;
+	user-select: none;
+}
+
 img {
 	max-width: 100%;
-} 
+}
 
 hr {
 	margin: 2rem 0;
@@ -59,11 +73,7 @@ table {
 		padding: 1rem;
 		border-style: solid;
 		border-width: 0 1px 1px 0;
-		border-color: white;
-	}
-
-	th {
-		background: #ddd;
+		border-color: $white;
 	}
 
 	td {
@@ -96,13 +106,24 @@ table {
 	}
 }
 
-.anim {
-	opacity: 0;
-	visibility: hidden;
-	transition: 1s transform, 1s opacity, 1s visibility;
+.section,
+.page-section {
+	padding-top: calc($section-space * 0.5);
+	padding-bottom: calc($section-space * 0.5);
 
-	&.is-active {
-		visibility: visible;
-		opacity: 1;
+    &:last-child {
+        padding-bottom: $section-space;
+    }
+}
+
+::selection {
+	color: $white;
+	background: $accent;
+}
+
+a, button, select {
+	&:focus-visible {
+		outline: 0.2rem solid $accent;
+		outline-offset: 0.3rem;
 	}
 }

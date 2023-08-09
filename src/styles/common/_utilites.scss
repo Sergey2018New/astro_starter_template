@@ -2,3 +2,15 @@
 .u-text-highlighted {
     color: $accent;
 }
+
+.u-hidden-mobile {
+    @include media(mob) {
+        display: none !important;
+    }
+}
+
+.u-visible-mobile {
+    @include media-min(mob) {
+        display: none !important;
+    }
+}

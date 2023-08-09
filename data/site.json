@@ -1,0 +1,15 @@
+{
+    "name": "Название сайта",
+    "logo": {
+        "width": 150,
+        "height": 50
+    },
+    "pages": [
+        {
+            "name": "Главная",
+            "link": "index.html",
+            "status": "В процессе",
+            "disabled": true
+        }
+    ]
+}

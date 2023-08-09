@@ -5,7 +5,7 @@
 @import "functions";
 
 // Variables
-@import "vars"; 
+@import "vars";
 
 // Fonts
 @import "fonts";
@@ -31,6 +31,7 @@
 @import "./common/form";
 
 // Header
+@import "./header/menu";
 @import "./header/header";
 
 // Footer

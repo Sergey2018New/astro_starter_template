@@ -5,6 +5,7 @@ import cheerio from 'gulp-cheerio';
 import replace from 'gulp-replace';
 import beautify from 'gulp-beautify';
 
+const dist = './dist/';
 const srcIcons = `./src/icons/**/*.svg`;
 const publicIcons = `./public/img/`;
 
@@ -34,4 +35,14 @@ const spriteSvg = () => {
 		.pipe(gulp.dest(publicIcons))
 }
 
+const beautifyTask = () => {
+	return gulp.src(`${dist}*.html`)
+        .pipe(replace('/css', 'css'))
+        .pipe(replace('/assets', 'assets'))
+        .pipe(replace('src="/js', 'src="js'))
+        .pipe(beautify.html({ indent_size: 4,  "max_preserve_newlines": 1,    }))
+        .pipe(gulp.dest(dist))
+}
+
 gulp.task('svg', spriteSvg);
+gulp.task('beautify', beautifyTask);

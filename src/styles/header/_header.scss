@@ -1,12 +1,13 @@
 /* ------- Header ------- */
 .logo{
 	display: block;
-	width: $logo-width; 
+	flex: none;
+	width: $logo-width;
 	height: $logo-height;
- 
+
 	&__img {
 		display: block;
-		width: 100%; 
+		width: 100%;
 		height: 100%;
 	}
 }
@@ -26,18 +27,42 @@
 	&__container {
 		display: grid;
 		align-items: center;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-areas: "logo menu button";
 		gap: 3rem;
 		height: 100%;
+
+        @include media(tab) {
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            grid-template-areas: "logo button menu";
+        }
+
+        @include media(mob) {
+            gap: 2rem;
+        }
 	}
 
-	&__right {
-		justify-self: flex-end;
-	}
+    &__logo-wrapper {
+        grid-area: logo;
+    }
+
+    &__menu {
+        grid-area: menu;
+    }
+
+    &__button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        grid-area: button;
+    }
+
+    &__button {
+        min-width: 0;
+    }
 
 	&.is-fixed-start {
 		.header__inner {
-			height: 8rem;
+			height: var(--header-height-fixed);
 			transform: translateY(-100%);
 		}
 	}
@@ -50,6 +75,14 @@
 			top: 0;
 			width: 100%;
 			transition: $duration transform;
+
+            .is-modal-active & {
+                padding-right: var(--modal-scrollbar-compensate);
+            }
+
+            .is-menu-active & {
+                padding-right: var(--menu-scrollbar-compensate);
+            }
 		}
 	}
 

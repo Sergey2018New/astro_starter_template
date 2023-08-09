@@ -1,122 +1,110 @@
-// import JustValidate from 'just-validate';
+import JustValidate from 'just-validate';
 // import IMask from 'imask';
-// import { Fancybox } from "@fancyapps/ui";
 // import { modal } from "./components/modal.js";
 
-const maskPhones = document.querySelectorAll('.js-mask-phone');
+export default function validation() {
+    const options = {
+        errorFieldCssClass: 'is-error',
+        errorLabelStyle: false,
+        errorLabelCssClass: 'is-label-error',
+    }
 
-maskPhones.forEach(phone => {
-	IMask(phone, {
-		mask: '+{7} (000) 000-00-00',
-		lazy: false,
-	});
-});
+    const defaultFieldOptions = [
+        {
+            rule: 'required',
+            errorMessage: 'Заполните поле',
+        }
+    ];
 
-const options = {
-	errorFieldCssClass: 'is-error',
-	errorLabelStyle: false,
-	errorLabelCssClass: 'is-label-error',
+    const emailFieldOptions = [
+        {
+            rule: 'required',
+            errorMessage: 'Заполните поле',
+        },
+        {
+            rule: 'email',
+            errorMessage: 'Введите корректный email',
+        },
+    ]
+
+    const phoneFieldOptions = [
+        {
+            rule: 'required',
+            errorMessage: 'Заполните поле',
+        },
+        {
+            rule: 'minLength',
+            value: 18,
+            errorMessage: 'Недопустимый формат',
+        },
+    ];
+
+    // Валидация форм
+    const forms = document.querySelectorAll('[data-js-form]');
+
+    forms.forEach((form) => {
+        const validate = new JustValidate(form, options);
+        const formFields = form.querySelectorAll('[data-js-form-field]');
+
+        if (formFields.length) {
+            for (let index = 0; index < formFields.length; index += 1) {
+                const field = formFields[index];
+                const fieldName = field.getAttribute('name');
+                let fieldOptions = defaultFieldOptions;
+
+                if (fieldName === "email") {
+                    fieldOptions = emailFieldOptions;
+                }
+
+                if (fieldName === "phone") {
+                    fieldOptions = phoneFieldOptions;
+
+                    // IMask(field, {
+                    //     mask: '+{7} (000) 000-00-00',
+                    //     lazy: false,
+                    // });
+                }
+
+                validate.addField(`[name="${fieldName}"]`, fieldOptions);
+            }
+        }
+
+        // validate.onFail((fields) => {
+        // 	isErrorFieldBox(fields);
+        // });
+
+        validate.onSuccess(() => {
+            modal.open('#modal_success');
+        });
+    });
 }
 
-const nameFieldOptions = [
-	{
-		rule: 'required',
-		errorMessage: 'Заполните поле',
-	}
-];
+// // Check class error fieldbox
+// function isErrorFieldBox (fields) {
+// 	for (let key in fields) {
+// 		let item = fields[key];
+// 		const fieldBox = item['elem'].closest('.fieldBox');
 
-const emailFieldOptions = [
-	{
-		rule: 'required',
-		errorMessage: 'Заполните поле',
-	},
-	{
-		rule: 'email',
-		errorMessage: 'Укажите корректный email',
-	},
-	// {
-	// 	validator: (value) => {
-	// 		if (value.trim().length === 0) {
-	// 			return true;
-	// 		} else if (isValidEmail(value.trim())) {
-	// 			return true;
-	// 		}
-	// 	},
-	// 	errorMessage: 'Укажите корректный email',
-	// },
-]
+// 		if (fieldBox) {
+// 			if (!item['isValid']) {
+// 				fieldBox.classList.add('is-error');
+// 			} else {
+// 				fieldBox.classList.remove('is-error');
+// 			}
+// 		}
+// 	}
+// }
 
-const phoneFieldOptions = [
-	{
-		rule: 'required',
-		errorMessage: 'Заполните поле',
-	},
-	{
-		rule: 'minLength',
-		value: 18,
-		errorMessage: 'Неверный формат телефона',
-	}
-];
+// // Is valid url
+// function isValidUrl(url)
+// {
+// 	var objRE = /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
+// 	return objRE.test(url);
+// }
 
-// Валидация форм
-const forms = document.querySelectorAll('.js-form');
-
-forms.forEach(form => {
-	const validate = new JustValidate(form, options);
-
-	if (form.querySelector('[name="name"]')) {
-		validate.addField('[name="name"]', nameFieldOptions);
-	}
-	
-	if (form.querySelector('[name="email"]')) {
-		validate.addField('[name="email"]', emailFieldOptions);
-	}
-	
-	if (form.querySelector('[name="phone"]')) {
-		validate.addField('[name="phone"]', phoneFieldOptions);
-	}
-
-	validate.onSuccess((event) => {
-		alert('Форма отправлена');
-		// modal.open('#modal-success');
-		// if (Fancybox.getInstance()) {
-		// 	Fancybox.getInstance().close();
-		// }
-		// Fancybox.show([
-		// 	{
-		// 		src: "#modal-success",
-		// 		type: "inline",
-		// 	}
-		// ]);
-	});
-});
-
-// Check class error fieldbox
-function isErrorFieldBox (fields) {
-	for (let key in fields) {
-		let item = fields[key];
-		const fieldBox = item['elem'].closest('.fieldBox');
-
-		if (fieldBox) {
-			if (!item['isValid']) {
-				fieldBox.classList.add('is-error');
-			} else {
-				fieldBox.classList.remove('is-error');
-			}
-		}
-	}
-}
-
-// Is valid url
-function isValidUrl(url)
-{
-	var objRE = /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
-	return objRE.test(url);
-}
-
-// Is valid Email
-function isValidEmail(email)
-{
-	var objRE = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-	return objRE.test(email);
-}
+// // Is valid Email
+// function isValidEmail(email)
+// {
+// 	var objRE = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+// 	return objRE.test(email);
+// }
