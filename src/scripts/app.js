@@ -3,17 +3,17 @@ import './vendor.js';
 import LazyLoad from "vanilla-lazyload";
 
 /* Import common scripts ****************** */
-import './scripts/setHeight.js';
+import setVariables from './scripts/setVariables.js';
 
 /* Import main components ***************** */
 // import { modal } from './components/modal.js';
 
 /* Import additional components *********** */
-// import swiper from './components/swiper.js';
+// import initSwiper from './components/swiper.js';
 
 /* Import header scripts ****************** */
-import headerFixing from './header/headerFixing.js';
 import headerMenu from './header/headerMenu.js';
+// import headerFixing from './header/headerFixing.js';
 
 /* Import additional scripts ************** */
 // import script from './scripts/script.js';
@@ -25,14 +25,14 @@ import headerMenu from './header/headerMenu.js';
 // modal.init();
 
 /* Initialization additional components ******* */
-// swiper();
+// initSwiper();
 
 /* Initialization header scripts ************** */
-headerFixing();
 headerMenu(991);
+// headerFixing();
 
 /* Initialization additional scripts ********** */
-// script();
+setVariables();
 
 /* Validation ************************ */
 // validation();

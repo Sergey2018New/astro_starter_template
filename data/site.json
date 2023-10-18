@@ -7,9 +7,9 @@
     "pages": [
         {
             "name": "Главная",
-            "link": "index.html",
+            "link": "main.html",
             "status": "В процессе",
-            "disabled": true
+            "disabled": false
         }
     ]
 }

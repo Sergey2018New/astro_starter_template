@@ -1,5 +1,6 @@
 ---
 import site from '@data/site.json';
+var currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -9,6 +10,6 @@ import site from '@data/site.json';
 				<img class="logo__img" src="img/logo.svg" width={site.logo.width} height={site.logo.height} alt={site.name}>
 			</a>
 		</div>
-		<div class="footer__copyright">&copy; Devstart</div>
+		<div class="footer__copyright">&copy; { currentYear } Devstart</div>
 	</div>
 </footer>

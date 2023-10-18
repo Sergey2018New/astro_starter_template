@@ -8,8 +8,9 @@
 
     &__container {
         display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
         gap: 4rem;
-
-        @include grid-columns(3);
     }
 }

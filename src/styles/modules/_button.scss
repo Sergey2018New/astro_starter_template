@@ -34,7 +34,7 @@
   	}
 
 	&:focus-visible {
-		outline-color: $base-color;
+		outline-color: $accent;
 	}
 
 	@include disabled {
