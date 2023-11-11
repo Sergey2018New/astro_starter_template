@@ -4,51 +4,6 @@
 // Functions
 @import "functions";
 
-// Base
-$base-font-family: "Roboto", "Arial", sans-serif;
-$base-font-weight: 400;
-$base-font-size: var(--text-size);
-$base-line-height: var(--text-line-height);
-$base-color: var(--color-base);
-$base-background: var(--color-background);
-
-// Fonts
-$font-primary: $base-font-family;
-
-// Font sizes
-$font-size-normal: $base-font-size;
-
-// Colors
-$black: #000;
-$white: #fff;
-$grey: grey;
-
-$accent: var(--color-accent);
-$second: var(--color-second);
-
-$backdrop: var(--color-backdrop);
-
-$input-border: var(--color-border);
-$placeholder: var(--color-placeholder);
-$disabled-color: var(--color-disabled);
-$disabled-background: var(--color-disabled);
-
-$error: var(--color-error);
-$success: var(--color-success);
-$link: var(--color-link);
-
-// Container
-$container: var(--container);
-$min-width: 350px;
-$gutters: var(--gutters);
-$gutters-sm: var(--gutters-sm);
-
-// Spaces
-$section-space: var(--section-space);
-
-$space: var(--space);
-$space-sm: var(--space-sm);
-
 // Breakpoints
 $grid-breakpoints: (
 	mob-xxs: 371px,

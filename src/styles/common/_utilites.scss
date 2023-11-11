@@ -1,6 +1,6 @@
 /* ------- utilites ------- */
 .u-text-highlighted {
-    color: $accent;
+    color: var(--color-accent, #0000cc);
 }
 
 .u-hidden {
