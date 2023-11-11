@@ -1,0 +1,10 @@
+/* Lazy */
+.lazy {
+	opacity: 0;
+	transition: var(--duration-md, 0.5s) opacity;
+
+	&[data-loaded="true"],
+	&.loaded {
+		opacity: 1;
+	}
+}

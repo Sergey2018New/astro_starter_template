@@ -2,8 +2,8 @@
 .logo{
 	display: block;
 	flex: none;
-	width: $logo-width;
-	height: $logo-height;
+	width: var(--logo-width);
+	height: var(--logo-height);
 
 	&__img {
 		display: block;
@@ -17,11 +17,11 @@
 	z-index: 100;
 	flex-shrink: 0;
 	width: 100%;
-	height: $header;
+	height: var(--header-height, 8rem);
 
 	&__inner {
-		height: $header;
-		background: $black;
+		height: var(--header-height, 8rem);
+		background: var(--color-black, #000);
 	}
 
 	&__container {
@@ -62,7 +62,7 @@
 
 	&.is-fixed-start {
 		.header__inner {
-			height: var(--header-height-fixed);
+			height: var(--header-height-fixed, 8rem);
 			transform: translateY(-100%);
 		}
 	}
@@ -74,7 +74,7 @@
 			left: 0;
 			top: 0;
 			width: 100%;
-			transition: $duration transform;
+			transition: var(--duration, 0.3s) transform;
 
             .is-modal-active & {
                 padding-right: var(--modal-scrollbar-compensate);

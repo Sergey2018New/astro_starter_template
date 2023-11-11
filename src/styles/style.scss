@@ -15,10 +15,11 @@
 
 // Base
 @import "./common/base";
+@import "./common/layout";
 @import "./common/utilites";
 
 // Plugins
-@import "./plugins/plugins";
+@import "./plugins/lazy";
 
 // Modules
 @import "./modules/icon";

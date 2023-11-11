@@ -97,6 +97,6 @@
 	}
 }
 
-@mixin grid-columns($columns: 3) {
+@mixin grid-columns($columns: 2) {
 	grid-template-columns: repeat($columns, minmax(0, 1fr));
 }

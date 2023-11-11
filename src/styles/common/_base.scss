@@ -8,8 +8,8 @@
 html {
 	position: relative;
 	height: 100%;
-	font-size: 62.5%;
-	background: $base-background;
+    font-size: 62.5%;
+    background: var(--color-background, #fff);
 }
 
 body {
@@ -19,11 +19,11 @@ body {
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
-	font-family: $base-font-family;
-	font-weight: $base-font-weight;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
-	color: $base-color;
+	font-family: var(--font-family, "Roboto", "Arial", sans-serif);
+	font-weight: 400;
+	font-size: var(--text-size, 1.6rem);
+	line-height: var(--text-line-height, 1.5);
+	color: var(--color-base, #000);
 }
 
 p {
@@ -35,8 +35,8 @@ p {
 }
 
 a {
-	color: $link;
-	transition: color $duration;
+	color: var(--color-link, inherit);
+	transition: color var(--duration, 0.3s);
 }
 
 button {
@@ -47,7 +47,7 @@ button {
 	box-shadow: none;
 	font-family: inherit;
 	font-size: inherit;
-	color: $base-color;
+	color: var(--color-base, #000);
 	background-color: transparent;
 	cursor: pointer;
 	user-select: none;
@@ -60,7 +60,7 @@ img {
 hr {
 	margin: 2rem 0;
 	border: none;
-	border-bottom: 1px solid $grey;
+	border-bottom: 1px solid var(--color-grey, grey);
 	height: 0;
 }
 
@@ -71,9 +71,7 @@ table {
 
 	th, td {
 		padding: 1rem;
-		border-style: solid;
-		border-width: 0 1px 1px 0;
-		border-color: $white;
+		border: 1px solid var(--color-border, #ddd);
 	}
 }
 
@@ -81,8 +79,7 @@ table {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
-	min-width: $min-width;
+	min-width: 360px;
 	min-height: 100vh;
 }
 
@@ -91,35 +88,32 @@ table {
 	width: 100%;
 }
 
-.container {
+.container,
+.container-fluid {
 	margin: 0 auto;
-	padding: 0 $gutters;
+	padding: 0 var(--gutters, 4rem);
 	width: 100%;
-	max-width: calc($container + $gutters * 2);
-
-	&_fluid {
-		max-width: none;
-	}
+	max-width: calc(var(--container, 132rem) + var(--gutters, 4rem) * 2);
 }
 
 .section,
 .page-section {
-	padding-top: calc($section-space * 0.5);
-	padding-bottom: calc($section-space * 0.5);
+	padding-top: calc(var(--section-space, 8rem) * 0.5);
+	padding-bottom: calc(var(--section-space, 8rem) * 0.5);
 
     &:last-child {
-        padding-bottom: $section-space;
+        padding-bottom: var(--section-space, 8rem);
     }
 }
 
 ::selection {
-	color: $white;
-	background: $accent;
+	color: var(--color-white, #fff);
+	background: var(--color-accent, #0000cc);
 }
 
 a, button, select {
 	&:focus-visible {
-		outline: 0.2rem solid $accent;
+		outline: 0.2rem solid var(--color-accent, #0000cc);
 		outline-offset: 0.3rem;
 	}
 }

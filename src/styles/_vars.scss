@@ -38,7 +38,7 @@ $success: var(--color-success);
 $link: var(--color-link);
 
 // Container
-$container: var(--container-max-width);
+$container: var(--container);
 $min-width: 350px;
 $gutters: var(--gutters);
 $gutters-sm: var(--gutters-sm);
@@ -66,32 +66,28 @@ $grid-breakpoints: (
 	pc-xxl: 1920px
 );
 
-// Header
-$header: var(--header-height);
-
-// Logo
-$logo-width: var(--logo-width);
-$logo-height: var(--logo-height);
-
-// Button
-$button-height: var(--button-height);
-
-// Input
-$input-height: var(--input-height);
-
-// Animation
-$duration: 0.3s;
-$duration-lazy: 0.6s;
-
-// Radius
-$radius: var(--radius);
+:root {
+    --font-family: "Roboto", "Arial", sans-serif;
+    --title-size: 3.2rem;
+	--text-size: 1.6rem;
+	--text-line-height: 1.5;
+}
 
 :root {
+	--color-black: #000;
+	--color-black-rgb: 0, 0, 0;
+	--color-white: #fff;
+	--color-white-rgb: 255, 255, 255;
 	--color-background: #fff;
-	--color-base: #000;
 
-	--color-accent: #0000cc;
+	--color-base: #000;
+	--color-base-rgb: 0, 0, 0;
+	--color-grey: grey;
+
+    --color-accent: #0000cc;
+	--color-accent-rgb: 0, 0, 204;
 	--color-second: #0000ff;
+	--color-accent-rgb: 0, 0, 255;
 
 	--color-border: #ddd;
 	--color-placeholder: #999;
@@ -102,31 +98,35 @@ $radius: var(--radius);
 	--color-success: green;
 
 	--color-link: inherit;
+}
 
-	--container-max-width: 132rem;
+:root {
+	--container: 132rem;
 	--gutters: 4rem;
 	--space: 4rem;
 	--space-sm: 2rem;
     --section-space: 10rem;
+	--radius: 2rem;
+	--radius-sm: 1rem;
+	--title-margin: 4rem;
 
+    @include media(mob) {
+        --gutters: 2rem;
+    }
+}
+
+:root {
     --header-height: 8rem;
     --header-height-fixed: 8rem;
 
 	--logo-width: 15rem;
 	--logo-height: 5rem;
 
-	--radius: 2rem;
-
 	--button-height: 4rem;
 	--input-height: 4rem;
+}
 
-	--title-margin: 4rem;
-	--title-size: 3.2rem;
-
-	--text-size: 1.6rem;
-	--text-line-height: 1.5;
-
-    @include media(mob) {
-        --gutters: 2rem;
-    }
+:root {
+    --duration: 0.3s;
+    --duration-md: 0.5s;
 }

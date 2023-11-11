@@ -1,0 +1,72 @@
+/* ------- Layout ------- */
+.l-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: var(--space, 2rem);
+
+    &-cols-2 {
+        @include grid-columns(2);
+    }
+
+    &-cols-3 {
+        @include grid-columns(3);
+    }
+
+    &-cols-4 {
+        @include grid-columns(4);
+    }
+
+    &-cols-5 {
+        @include grid-columns(5);
+    }
+
+    &-cols-6 {
+        @include grid-columns(6);
+    }
+}
+
+.l-column {
+    &-2 {
+        grid-column: span 2;
+    }
+
+    &-3 {
+        grid-column: span 3;
+    }
+
+    &-4 {
+        grid-column: span 4;
+    }
+
+    &-5 {
+        grid-column: span 5;
+    }
+
+    &-fill {
+        grid-column: -1 / 1;
+    }
+}
+
+.l-gap-10 {
+    gap: 1rem;
+}
+
+.l-gap-20 {
+    gap: 2rem;
+}
+
+.l-gap-30 {
+    gap: 3rem;
+}
+
+.l-gap-40 {
+    gap: 4rem;
+}
+
+.l-gap-50 {
+    gap: 5rem;
+}
+
+.l-gap-60 {
+    gap: 6rem;
+}

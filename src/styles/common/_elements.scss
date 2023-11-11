@@ -1,8 +1,8 @@
 /* ------- Site elements ------- */
 .section-title {
     margin-top: 0;
-    font-size: var(--title-size);
-    font-weight: 400;
+    font-size: var(--title-size, 3.2rem);
+    font-weight: 700;
 
     h1,
     h2,
@@ -14,12 +14,4 @@
         font-weight: inherit;
         color: inherit;
     }
-}
-
-.table-wrapper {
-	overflow: auto;
-
-	table {
-		min-width: 60rem;
-	}
 }

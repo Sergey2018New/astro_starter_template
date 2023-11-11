@@ -3,8 +3,8 @@
     flex-shrink: 0;
     padding: 2rem 0;
     width: 100%;
-    color: $white;
-    background: $black;
+    color: var(--color-white, #fff);
+    background: var(--color-black, #000);
 
     &__container {
         display: grid;

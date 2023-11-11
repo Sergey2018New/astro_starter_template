@@ -2,7 +2,7 @@
 svg,
 .ui-icon {
 	display: block;
-	transition: $duration fill, $duration stroke;
+	transition: var(--duration, 0.3s) fill, var(--duration, 0.3s) stroke;
 }
 
 .ui-icon {

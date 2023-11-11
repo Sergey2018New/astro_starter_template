@@ -1,15 +1,15 @@
 let vars = {};
 
-// Убрать класс из всех элементов массива
+// Remove a class from all array elements
 vars.removeClasses = (array, className) => {
-	for (var i = 0; i < array.length; i++) {
+	for (let i = 0; i < array.length; i += 1) {
 		array[i].classList.remove(className);
 	}
 }
 
-// Добавить класс всем элементам массива
+// Add a class to all array elements
 vars.addClasses = (array, className) => {
-	for (var i = 0; i < array.length; i++) {
+	for (let i = 0; i < array.length; i += 1) {
 		array[i].classList.add(className);
 	}
 }
