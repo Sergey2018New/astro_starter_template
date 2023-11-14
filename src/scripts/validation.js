@@ -94,17 +94,3 @@ export default function validation() {
 // 		}
 // 	}
 // }
-
-// // Is valid url
-// function isValidUrl(url)
-// {
-// 	var objRE = /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
-// 	return objRE.test(url);
-// }
-
-// // Is valid Email
-// function isValidEmail(email)
-// {
-// 	var objRE = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-// 	return objRE.test(email);
-// }
